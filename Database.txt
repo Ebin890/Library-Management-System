@@ -1,1 +1,10 @@
+create database library;
+
+create table books(bid varchar(20) primary key, title varchar(30), author varchar(30), status varchar(30));
+
+create table books_issued(bid varchar(20) primary key, issuedto varchar(30),email_id varchar(30),return_date date);
+
+create table staffsignup(Sid varchar(10) primary key,Fname varchar(10),Lname varchar(10),Password varchar(12),Date date);
+
+create table stafflogin(Sid varchar(10),Password varchar(12),foreign key (Sid) references staffsignup(Sid));
 
