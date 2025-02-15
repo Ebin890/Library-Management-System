@@ -15,7 +15,7 @@ import mysql.connector
 from tkcalendar import Calendar
 
 import mysql.connector as my
-mydb = my.connect(user='root', password='9847709822', host='localhost', database='library')
+mydb = my.connect(user='ENTER YOUR USERNAME', password='ENTER YOUR PASSWORD', host='localhost', database='library')
 
 
 
