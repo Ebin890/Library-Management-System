@@ -1,3 +1,7 @@
+//Mention the path of the image for each image placed.
+//Add the username and its password for database connection.
+//Add Email id and its password for sending notification.
+
 from tkinter import*
 from tkinter import ttk
 from PIL import Image,ImageTk
@@ -68,9 +72,9 @@ def mainscreen():
     main_screen.state("zoomed")
     main_screen.title("BookBee")
     main_screen.config(bg="lightblue")
-    main_screen.iconbitmap(True, "C:\\Users\\EBIN P P\\OneDrive\\Desktop\\dbms\\logo.ico")
+    main_screen.iconbitmap(True, "logo.ico")
 
-    main_screen.bg = ImageTk.PhotoImage(file="C:\\Users\\EBIN P P\\OneDrive\\Desktop\\dbms\\LOGIN.jpg")
+    main_screen.bg = ImageTk.PhotoImage(file="LOGIN.jpg")
     bg = Label(main_screen, image=main_screen.bg, bg="snow2").pack()
 
     p_name1 = StringVar()
@@ -100,8 +104,8 @@ def mainscreen():
     passwd_entry = Entry(main_screen, textvariable=p_password1, font=("league spartan", 13), show='*', bg="white")
     passwd_entry.place(x=875, y=340, width=350, height=30)
     
-    eye = PhotoImage(file="C:\\Users\\EBIN P P\\OneDrive\\Desktop\\dbms\\openeye.png")
-    eye_closed = PhotoImage(file="C:\\Users\\EBIN P P\\OneDrive\\Desktop\\dbms\\closeeye.png") 
+    eye = PhotoImage(file="openeye.png")
+    eye_closed = PhotoImage(file="closeeye.png") 
     toggle_btn = Button(main_screen, image=eye, width=30, height=25, bg="white", fg="white", bd=0, command=toggle_password)
     toggle_btn.place(x=1185, y=342)
 
@@ -124,7 +128,7 @@ def staffsignup():
     fname1=fname.get()
     lname1=lname.get()
     sid1=sid.get()
-    password="ADD PASSWORD FOR ADMIN"
+    password="ADD PASSWORD FOR ADMIN" //ADD PASSWORD
     date=datetime.today().strftime('%d-%m-%Y')
 
 
@@ -185,9 +189,9 @@ def signup():
     frame1.geometry("1350x700+0+0")
     frame1.state("zoomed")
     frame1.title("BookBee")
-    frame1.iconbitmap(True,"C:\\Users\\EBIN P P\\OneDrive\\Desktop\\dbms\\logo.ico")
+    frame1.iconbitmap(True,"logo.ico")
     frame1.config(bg="white")
-    frame1_bg = ImageTk.PhotoImage(file="C:\\Users\\EBIN P P\\OneDrive\\Desktop\\dbms\\SIGN UP.jpg")
+    frame1_bg = ImageTk.PhotoImage(file="SIGN UP.jpg")
     bg1 = Label(frame1, image=frame1_bg).pack()
 
     s_id=Label(frame1, text="STAFF  ID",font=("league spartan", 10, "bold"),fg="#191970",bg="#cbe7f5").place(x=285,y=255)
@@ -207,7 +211,7 @@ def signup():
 
     count = 0
     anima = None
-    file = "C:\\Users\\EBIN P P\\OneDrive\\Desktop\\dbms\\gif_Label.gif"
+    file = "gif_Label.gif"
     infom = Image.open(file)
     frames = infom.n_frames
     im8 = []
@@ -275,7 +279,7 @@ def selection():
         frame2.geometry("1350x700+0+0")
         frame2.state("zoomed")
         frame2.title("BookBee")
-        frame2.iconbitmap("C:\\Users\\EBIN P P\\OneDrive\\Desktop\\dbms\\logo.ico")
+        frame2.iconbitmap("logo.ico")
         frame2.config(bg="white")
 
         def connect_to_db():
@@ -283,8 +287,8 @@ def selection():
                 conn = mysql.connector.connect(
                     host='localhost',  
                     database='library',  
-                    user='root',  
-                    password='9847709822' 
+                    user='ENTER USER NAME',  //ENTER HOST NAME
+                    password='ENTER THE PASSWORD' //ENTER PASSWORD
                 )
                 if conn.is_connected():
                     return conn
@@ -434,7 +438,7 @@ def selection():
             window.geometry("480x490+426+180")
             window.title("BeeBot")
             window.config(bg="#b5d2ed")
-            window.iconbitmap("C:\\Users\\EBIN P P\\OneDrive\\Desktop\\dbms\\bee.ico")
+            window.iconbitmap("bee.ico")
             chat_window = scrolledtext.ScrolledText(window, wrap=WORD)
             chat_window.pack(pady=10)
             chat_window.configure(state='disabled')
@@ -450,7 +454,7 @@ def selection():
             global txt2, count2, text2, label2,qr_code
             f2=Frame(frame2,width=1400,height=800,bg="white")
             f2.place(x=0,y=0)
-            f2_bg = ImageTk.PhotoImage(file="C:\\Users\\EBIN P P\\OneDrive\\Desktop\\dbms\\welcome32.jpg")
+            f2_bg = ImageTk.PhotoImage(file="welcome32.jpg")
             bg7 = Label(f2, image=f2_bg)
             bg7.image = f2_bg  
             bg7.place(x=0, y=0)
@@ -470,7 +474,7 @@ def selection():
             qr_code.place(x=1220,y=485)
             various_color()
 
-            img_path = "C:\\Users\\EBIN P P\\OneDrive\\Desktop\\dbms\\bee.png"
+            img_path = "bee.png"
             img3 = ImageTk.PhotoImage(Image.open(img_path))
             button =Button(f2, image=img3, border=0,command=beebot)
             button.place(x=1200, y=510, width=110, height=120)
@@ -528,7 +532,7 @@ def selection():
             f1.destroy()
             f2=Frame(frame2,width=1400,height=800,bg='white')
             f2.place(x=0,y=0)
-            f2_bg = ImageTk.PhotoImage(file="C:\\Users\\EBIN P P\\OneDrive\\Desktop\\dbms\\add1.jpg")
+            f2_bg = ImageTk.PhotoImage(file="add1.jpg")
             bg7 = Label(f2, image=f2_bg)
             bg7.image = f2_bg  
             bg7.pack()
@@ -567,7 +571,7 @@ def selection():
             f1.destroy()
             f2=Frame(frame2,width=1400,height=800,bg='white')
             f2.place(x=0,y=0)
-            f2_bg = ImageTk.PhotoImage(file="C:\\Users\\EBIN P P\\OneDrive\\Desktop\\dbms\\add.jpg")
+            f2_bg = ImageTk.PhotoImage(file="add.jpg")
             bg7 = Label(f2, image=f2_bg)
             bg7.image = f2_bg  
             bg7.pack()
@@ -642,7 +646,7 @@ def selection():
             f1.destroy()
             f2=Frame(frame2,width=1400,height=800,bg='white')
             f2.place(x=0,y=0)
-            f2_bg = ImageTk.PhotoImage(file="C:\\Users\\EBIN P P\\OneDrive\\Desktop\\dbms\\add3.jpg")
+            f2_bg = ImageTk.PhotoImage(file="add3.jpg")
             bg7 = Label(f2, image=f2_bg)
             bg7.image = f2_bg  
             bg7.pack()
@@ -690,8 +694,8 @@ def selection():
                 return
             receiver_email = myresult3[0][2] 
             user_name = myresult3[0][1] 
-            sender_email = "ADD YOUR MAIL ID"
-            password = "ADD YOUR PASSWORD"
+            sender_email = "ADD YOUR EMAIL ID" //ADD EMAIL ID
+            password = "ADD THE PASSWORD OF THE EMAIL ID" //ADD EMAIL ID PASSWORD
             
             message = f'''Subject: BookBee Confirmation
 
@@ -796,7 +800,7 @@ Happy reading!'''
             f1.destroy()
             f2=Frame(frame2,width=1400,height=800,bg='white')
             f2.place(x=0,y=0)
-            f2_bg = ImageTk.PhotoImage(file="C:\\Users\\EBIN P P\\OneDrive\\Desktop\\dbms\\add1.jpg")
+            f2_bg = ImageTk.PhotoImage(file="add1.jpg")
             bg7 = Label(f2, image=f2_bg)
             bg7.image = f2_bg  
             bg7.pack()
@@ -871,7 +875,7 @@ Happy reading!'''
             f1.destroy()
             f2=Frame(frame2,width=1400,height=800,bg='white')
             f2.place(x=0,y=0)
-            f2_bg = ImageTk.PhotoImage(file="C:\\Users\\EBIN P P\\OneDrive\\Desktop\\dbms\\add4.jpg")
+            f2_bg = ImageTk.PhotoImage(file="add4.jpg")
             bg7 = Label(f2, image=f2_bg)
             bg7.image = f2_bg  
             bg7.pack()
@@ -903,8 +907,8 @@ Happy reading!'''
                 tkinter.messagebox.showinfo("BookBee", "No users have books due tomorrow!")
                 cursor5.close() 
                 return
-            sender_email = "ADD YOUR MAILID"
-            password = "ADD YOUR PASSWORD" 
+            sender_email = "ADD YOUR EMAIL ID" //ADD MAIL ID
+            password = "ADD THE PASSWORD FOR THE EMAIL ID" // ADD PASSWORD FOR EMAIL ID
             message_template = """Subject: BookBee Reminder
 Hello {name},
 
@@ -933,7 +937,7 @@ Thank you!
             f1.destroy()
             f2 = Frame(frame2, width=1400, height=800, bg='white')
             f2.place(x=0, y=0)
-            f2_bg = ImageTk.PhotoImage(file="C:\\Users\\EBIN P P\\OneDrive\\Desktop\\dbms\\add.jpg")
+            f2_bg = ImageTk.PhotoImage(file="add.jpg")
             bg7 = Label(f2, image=f2_bg)
             bg7.image = f2_bg 
             bg7.pack(fill='both', expand=True)
@@ -1029,7 +1033,7 @@ Thank you!
                 b2.place(x=5,y=8)
 
             global img2
-            img2 = ImageTk.PhotoImage(Image.open("C:\\Users\\EBIN P P\\OneDrive\\Desktop\\dbms\\close.png"))
+            img2 = ImageTk.PhotoImage(Image.open("close.png"))
 
             Button(f1,
                    image=img2,
@@ -1041,7 +1045,7 @@ Thank you!
 
         default_home()
 
-        img1 = ImageTk.PhotoImage(Image.open("C:\\Users\\EBIN P P\\OneDrive\\Desktop\\dbms\\open.png"))
+        img1 = ImageTk.PhotoImage(Image.open("open.png"))
 
         global b2
         b2=Button(frame2,image=img1,
